@@ -9,25 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Plus, Trash2, Image, Upload, Link as LinkIcon, Lock, RefreshCw } from 'lucide-react';
-import type { AboutHighlight } from '@/types/portfolio';
 
-/** Compute the live value for a dynamic highlight */
-function useDynamicValue(dynamic: AboutHighlight['dynamic'], data: ReturnType<typeof usePortfolio>['data']): string | null {
-  if (!dynamic) return null;
-  if (dynamic === 'projects') {
-    const count = data.projects.filter(p => p.visible !== false).length;
-    return `${count}+`;
-  }
-  if (dynamic === 'certifications') {
-    const count = data.certifications.filter(c => c.visible !== false).length;
-    return String(count);
-  }
-  if (dynamic === 'languages') {
-    const count = data.skills.programming.filter(s => s.visible !== false).length;
-    return `${count}+`;
-  }
-  return null;
-}
 
 export function AboutEditor() {
   const { data, updateAbout } = usePortfolio();

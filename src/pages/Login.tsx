@@ -126,7 +126,6 @@ export function Login() {
   const [fOtp, setFOtp]                 = useState('');
   const [fNewPw, setFNewPw]             = useState('');
   const [fConfirm, setFConfirm]         = useState('');
-  const [fOtpSent, setFOtpSent]         = useState(false);
   const [fLoading, setFLoading]         = useState(false);
   const [showFPw, setShowFPw]           = useState(false);
   const [showFConf, setShowFConf]       = useState(false);
